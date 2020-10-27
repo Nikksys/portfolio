@@ -1,0 +1,2 @@
+class Eurekod < ApplicationRecord
+end

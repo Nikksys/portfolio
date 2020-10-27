@@ -1,0 +1,6 @@
+test show ok <br>
+
+<%=@design.name%><br>
+<%=@design.description%>
+<%=image_tag(@design.picture) if @design.picture.attached?%>
+<%=@design.content%>

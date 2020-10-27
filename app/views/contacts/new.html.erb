@@ -1,0 +1,39 @@
+<section id="contact-page">
+  
+  <%= link_to image_tag("whatsapp-logo.png", class: "wa-icon"), url_for("https://wa.me/573217289779?text=I'm%20interested%20in%20your%20services."), target: '_blank'%>
+  
+  <div class="contact-card">
+    <div class="contact-text">
+      <h1>Leave me a message !</h1>
+      <p>Feel free to fullfill the form if you need my services, or even if you just want to ask for more infos. Or clic on the whatsapp icon to contact me.</p>
+    </div>
+    <div class="form-area">
+      <%= form_for @contact do |f| %>
+        <% if flash[:error].present? %>
+            <p style="color: red"> Not valid email!, Check if the '@' is present. </p>
+        <% end %>
+
+        <%= f.text_field :name, required: true, class: "form-contact", placeholder: "Name" %>
+
+        <br>
+
+        <%= f.email_field :email, required: true, class: "form-contact", placeholder: "Email" %>
+
+        <br>
+
+        <%= f.phone_field :mobile, required: true, class: "form-contact", placeholder: "Phone" %>
+
+        <br>
+
+        <%= f.text_area :message, as: :text, class: "form-contact", placeholder: "Message", rows: "7" %>
+
+        <%= f.text_field :nickname, hint: 'leave this field blank', style: "display: none" %>
+
+        <br>
+
+
+        <%= f.submit "Send", class: "form-button" %>
+      <% end %>
+    </div>        
+  </div>
+</section>

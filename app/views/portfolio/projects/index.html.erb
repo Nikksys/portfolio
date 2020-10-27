@@ -1,0 +1,13 @@
+
+<%= link_to 'New Project', new_portfolio_project_path %>
+
+
+<%@projects.each do |project|%>
+  <h1>test <%=project.name%></h1>
+  <%= link_to 'Show', [:portfolio, project] %>
+  <%= link_to 'Edit', edit_portfolio_project_path(project) %>
+  <%= link_to 'Destroy', portfolio_project_path(project), method: :delete, data: { confirm: 'Are you sure?' } %>
+  
+<%end%>
+<br>
+

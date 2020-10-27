@@ -1,0 +1,212 @@
+<div class=" home-cover">
+  <div class="cover-logo">
+    <%= image_tag("logo-transparent.png", alt: "portrait", id: "logo-transparent")%>
+  </div>
+  
+  <div class="cover-title">
+    <h1>Designer, Fullstack Developer</h1>
+  </div>
+  
+  <div class="cover-p">
+    <p>I'm Nicolas Barbier<br>welcome to my portfolio webpage<br>Nixsys.</p>
+  </div>
+</div>
+
+<section id="intro"> 
+  
+  <div class="intro-portrait hideme"> 
+    <% image_tag("portrait.png", alt: "portrait", id: "portrait")%> 
+  </div>
+  <div class="intro-p hideme ">  
+    <p>&gt;&nbsp; Il est interessant de voir au combien nos choix confirment ce que nous sommes. Et c'est en cherchant à écrire ces quelques lignes d'intro de mon site web que je m'en suis rendu compte.
+    </p> 
+    <p>&gt;&nbsp; J'ai commencé ma vie professionnelle comme Art Director en agence de publicité il y maintenant plus de 15 ans. Je me rappelle que bien que je voyais mon travail dans des revues, sur des affiches ou encore à la tv. J'ai toujours eu cette frustration de ne pas pouvoir le toucher. En effet, quelle grâce que de voir dans les mains des gens un univers qui nous appartient, issue de notre imagination. Pendant longtemps je nourrissais ma frustration de ne pas designer des objets. Je voulais toucher les gens d'un peu plus prêt. Qu'ils manipulent, utilisent mes créations...
+    </p> 
+    <p>&gt;&nbsp;Et puis un jour j'ai réalisé au combien l'immatériel pouvait devenir si concret! Bien plus que des objets, j'ai découvert que la programmation est si puissante qu'elle est capable de construire des mondes. Bienvenue dans l'un de mes paradigmes.
+    </p>  
+    <p class="intro-cursor">▮</p> 
+  </div> 
+  
+</section>
+
+<section id="discipline"> 
+  <div class="skills">
+    <div id="skill-dev" class="skills-pic">
+      <%= link_to "more ...", portfolio_web_dev_path, class: "link-button"%> 
+    </div>
+    <div class="skills-text">
+      <h3>Fullstack Web development</h3>
+      <p> My approach to website is to create a unique paradigm that belong to the company or brand univers. I ensure a use and simplicity for your audience. I'm experienced with html/css for sure, also Ruby, Rails, javascript, react basics.</p>
+    </div>
+  </div>
+  <div class="skills">
+    <div id="skill-des" class="skills-pic">
+      <%= link_to "more ...",  portfolio_designs_path , class: "link-button"%>
+    </div>
+    <div class="skills-text">
+      <h3>graphic designer - DA</h3>
+      <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+    </div>
+  </div>
+  <div class="skills">
+    <div id="skill-teach" class="skills-pic">
+      <%=link_to "more ...", eurekods_path , class: "link-button"%>   
+    </div>
+    <div class="skills-text">
+      <h3>Eurekod - Teaching</h3>
+      <p> Within BogotaDev company I'm Ruby and Rails teacher. I know to deliver a message straight to the point thanks to my comunicator skills,  ensuring you leave your class all understood. Recently I started a dev auto channel named Eurekod.</p>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="">
+    
+  </div>
+</section>
+<section id="contact-section">
+  
+  <%= link_to image_tag("whatsapp-logo.png", class: "wa-icon"), url_for("https://wa.me/573217289779?text=I'm%20interested%20in%20your%20services."), target: '_blank'%>
+  
+  <div class="contact-card">
+    <div class="contact-text">
+      <h1>Leave me a message !</h1>
+      <p>Feel free to fullfill the form if you need my services, or even if you just want to ask for more infos. Or clic on the whatsapp icon to contact me.</p>
+    </div>
+    <div class="form-area">
+      <%= form_for @contact do |f| %>
+        
+        <%= f.text_field :name, required: true, class: "form-contact", placeholder: "Name" %>
+
+        <br>
+
+        <%= f.email_field :email, required: true, class: "form-contact", placeholder: "Email" %>
+
+        <br>
+
+        <%= f.phone_field :mobile, required: true, class: "form-contact", placeholder: "Phone" %>
+
+        <br>
+
+        <%= f.text_area :message, as: :text, class: "form-contact", placeholder: "Message", rows: "7" %>
+
+        <%= f.text_field :nickname, hint: 'leave this field blank', style: "display: none" %>
+
+        <br>
+
+
+        <%= f.submit "Send", class: "form-button" %>
+      <% end %>
+    </div>        
+  </div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+  
+  $(document).ready(function() {
+
+    $(window).on('load', function(){
+
+      $('.hideme').each( function(i){
+
+          var bottom_of_object = $(this).offset().top + $(this).outerHeight();
+          var bottom_of_window = $(window).scrollTop() + $(window).height();
+
+          /* If the object is completely visible in the window, fade it it */
+          if( bottom_of_window  >= bottom_of_object ){
+
+              $(this).animate({'opacity':'1'},500);
+
+          }
+
+      });
+
+      $('.final-anime').each( function(i){
+
+          var bottom_of_object = $(this).offset().top + $(this).outerHeight();
+          var bottom_of_window = $(window).scrollTop() + $(window).height();
+
+          /* If the object is completely visible in the window, fade it it */
+          if( bottom_of_window  >= bottom_of_object ){
+
+              $(this).animate({'opacity':'1'},800);
+          }
+
+      });
+
+      $('.final-background').each( function(i){
+
+          var bottom_of_object = $(this).offset().top + $(this).outerHeight();
+          var bottom_of_window = $(window).scrollTop() + $(window).height();
+
+          /* If the object is completely visible in the window, fade it it */
+          if( bottom_of_window  >= bottom_of_object ){
+
+            $(this).animate({'opacity':'1'},1000);
+          }
+
+      });
+    // your logic here`enter code here`
+    });
+
+    /* Every time the window is scrolled ... */
+    $(window).scroll( function(){
+
+        /* Check the location of each desired element */
+        $('.hideme').each( function(i){
+
+            var bottom_of_object = $(this).offset().top + $(this).outerHeight();
+            var bottom_of_window = $(window).scrollTop() + $(window).height();
+
+            /* If the object is completely visible in the window, fade it it */
+            if( bottom_of_window  >= bottom_of_object ){
+
+                $(this).animate({'opacity':'1'},500);
+
+            }
+
+        });
+
+        $('.final-anime').each( function(i){
+
+            var bottom_of_object = $(this).offset().top + $(this).outerHeight();
+            var bottom_of_window = $(window).scrollTop() + $(window).height();
+
+            /* If the object is completely visible in the window, fade it it */
+            if( bottom_of_window  >= bottom_of_object ){
+
+                $(this).animate({'opacity':'1'},800);
+            }
+
+        });
+
+        $('.final-background').each( function(i){
+
+            var bottom_of_object = $(this).offset().top + $(this).outerHeight();
+            var bottom_of_window = $(window).scrollTop() + $(window).height();
+
+            /* If the object is completely visible in the window, fade it it */
+            if( (bottom_of_window + bottom_of_window*0.1) >= bottom_of_object ){
+
+              $(this).animate({'opacity':'1'},800);
+            }
+
+        });
+
+      });
+
+});
+
+  
+</script>
+

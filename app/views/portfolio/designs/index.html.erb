@@ -1,0 +1,11 @@
+<%= link_to 'New Design', new_portfolio_design_path %>
+
+
+<%@designs.each do |design|%>
+  <h1>test <%=design.name%></h1>
+  <%= link_to 'Show', [:portfolio, design] %>
+  <%= link_to 'Edit', edit_portfolio_design_path(design) %>
+  <%= link_to 'Destroy', portfolio_design_path(design), method: :delete, data: { confirm: 'Are you sure?' } %>
+  
+<%end%>
+<br>
