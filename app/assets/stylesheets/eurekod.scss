@@ -7,6 +7,12 @@
   align-items: flex-start;
   position: relative;
   
+  background: image-url("fond_eurekod.jpg");
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  
 }
 
 .banner video{
