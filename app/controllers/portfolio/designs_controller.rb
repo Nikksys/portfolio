@@ -44,7 +44,7 @@ class Portfolio::DesignsController < ApplicationController
   private
     
     def design_params
-      params.require(:design).permit(:name, :description, :design_type, :picture, :content)
+      params.require(:design).permit(:name, :description, :design_type, :picture, :content, :remove_picture)
     end
   
 end

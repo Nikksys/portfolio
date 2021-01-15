@@ -12,6 +12,7 @@
  *
  *= require_tree .
  *= require_self
+ //= require actiontext
  */
 
 
@@ -20,6 +21,7 @@
 @import "./actiontext.scss";
 @import "contacts";
 @import "eurekod";
+@import "design";
 
 
 
@@ -41,10 +43,30 @@ body{
   padding: 0;
 }
 
-main{
-  padding: 0;
-}
 
 a{
   text-decoration: none;
+}
+
+.big-title {
+  -webkit-text-stroke: 1px black;
+  font-family: sans;
+  color: var(--text-primary);
+  font-size: 6em;
+  font-family: futura;
+  text-align: center;
+}
+
+.to-title-base{
+  padding-top: 50px;
+}
+
+.project-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pw-1rem {
+  padding: 0 1rem;
 }

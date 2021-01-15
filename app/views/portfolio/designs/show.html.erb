@@ -1,6 +1,16 @@
-test show ok <br>
-
-<%=@design.name%><br>
-<%=@design.description%>
-<%=image_tag(@design.picture) if @design.picture.attached?%>
+<div class="project-image"><%=image_tag(@design.picture) if @design.picture.attached?%></div>
+<div class="project-header">
+  <h1 class="big-title"><%=@design.name%></h1>
+  <%= link_to 'edit', edit_portfolio_design_path(@design), class: 'to-title-base'%>
+</div>
+<p class="description"><%=@design.description%></p>
 <%=@design.content%>
+
+<script type="text/javascript">
+  // hide caption in show page
+  
+  if (document.body.contains(document.querySelector(".attachment__caption"))) {
+    let trixCaption = document.querySelector(".attachment__caption")
+    trixCaption.style.display = "none"
+  }
+</script>

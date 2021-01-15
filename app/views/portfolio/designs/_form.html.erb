@@ -1,44 +1,75 @@
-<%= form_for [:portfolio, @design] do |form| %>
-  <% if project.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(project.errors.count, "error") %> prohibited this project from being saved:</h2>
 
-      <ul>
-        <% project.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
-        <% end %>
-      </ul>
+  <%= form_for [:portfolio, @design] do |form| %>
+    <% if @design.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(@design.errors.count, "error") %> prohibited this project design from being saved:</h2>
+
+        <ul>
+          <% @design.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div class="field">
+      <%= form.label :name %><br>
+      <%= form.text_field :name %><br><br>
+    </div>
+
+    <div class="field">
+      <%= form.label :design_type %><br>
+      <%= form.text_field :design_type %><br><br>
+    </div>
+
+    <div class="field">
+      <%= form.label :description %><br> 
+      <%= form.text_area :description, cols: 50, rows: 20%><br>
+    </div>
+    
+    <div class="field">
+      <%= form.label :picture %><br>
+      <%= form.file_field :picture %><br><br>
+    </div>
+    
+    <% if @design.picture.attached? %>
+      <div class="edit-pic">
+        <div class="pic-icon">
+        <%= image_tag @design.picture.variant(resize_to_limit: [50, 50]) %>
+        </div>
+        <div class="field">
+          <%= form.label :remove_picture%>
+          <%= form.check_box :remove_picture %>
+        </div>   
+      </div>
+    <% end %>
+    
+    
+    <div class="field">
+      <%= form.label :content %>
+      <%= form.rich_text_area :content %>
+    </div>
+    
+    
+
+    <div class="actions">
+      <%= form.submit %>
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name %>
-  </div>
 
-  <div class="field">
-    <%= form.label :design_type %>
-    <%= form.text_field :design_type %>
-  </div>
 
-  <div class="field">
-    <%= form.label :description %>
-    <%= form.text_area :description %>
-  </div>
-  
-  <div class="field">
-    <%= form.label :picture %>
-    <%= form.file_field :picture %>
-  </div>
-  
-  <div class="field">
-    <%= form.label :content %>
-    <%= form.rich_text_area :content %>
-  </div>
-  
+<script type="text/javascript">
+
+  let picCheckBox = document.querySelector("#design_remove_picture")
+  // picCheckBox.value = false;
+  // picCheckBox.addEventListener('change', function (e) {
+  //   if (picCheckBox.checked) {
+  //   picCheckBox.value = true;
+  //   } else {
+  //   picCheckBox.value = false;
+  //   }
+  // })
   
 
-  <div class="actions">
-    <%= form.submit %>
-  </div>
-<% end %>
+</script>
