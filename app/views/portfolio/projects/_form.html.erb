@@ -36,6 +36,18 @@
     <%= form.file_field :picture %>
   </div>
   
+  <% if @project.picture.attached? %>
+    <div class="edit-pic">
+      <div class="pic-icon">
+      <%= image_tag @project.picture.variant(resize_to_limit: [50, 50]) %>
+      </div>
+      <div class="field">
+        <%= form.label :remove_p_picture%>
+        <%= form.check_box :remove_p_picture %>
+      </div>   
+    </div>
+  <% end %>
+  
   <div class="field">
     <%= form.label :content %>
     <%= form.rich_text_area :content %>

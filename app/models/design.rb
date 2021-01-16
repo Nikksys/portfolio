@@ -11,5 +11,3 @@ class Design < ApplicationRecord
   end
   
 end
-
-

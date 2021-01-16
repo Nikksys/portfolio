@@ -43,6 +43,6 @@ class Portfolio::ProjectsController < ApplicationController
   
   private
     def project_params
-      params.require(:project).permit(:name, :description, :project_type, :url, :picture, :content)
+      params.require(:project).permit(:name, :description, :project_type, :url, :picture, :content, :remove_p_picture)
     end
 end
