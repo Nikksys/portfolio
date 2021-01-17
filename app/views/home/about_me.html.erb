@@ -1,12 +1,52 @@
 <section class="about-cover">
-  <div class="intro-boutme">
+  <h1>ABOUT ME</h1>
+  <div class="caroussel-boutme">
+    <div class="caroussel-container">
+      <div class="green caroussel-box">
+        <%= image_tag("teach.jpg", class: 'pics-me') %>
+      </div>
+      <div class="yellow caroussel-box">
+        <%= image_tag("prog.png", class: 'pics-me') %>
+      </div>
+      <div class="red caroussel-box">
+        <%= image_tag("bike.png", class: 'pics-me') %>
+      </div>
+      <div  class="purple caroussel-box">
+        <%= image_tag("youtube.jpg", class: 'pics-me') %>
+      </div>
+      <div class="pink caroussel-box">
+        <%= image_tag("tuto.jpg", class: 'pics-me') %>
+      </div>
+      <div class="green caroussel-box">
+        <%= image_tag("teach.jpg", class: 'pics-me') %>
+      </div>
+      <div  class="yellow caroussel-box">
+        <%= image_tag("prog.png", class: 'pics-me') %>
+      </div>
+      <div class="red caroussel-box">
+        <%= image_tag("bike.png", class: 'pics-me') %>
+      </div>
+      <div class="purple caroussel-box">
+        <%= image_tag("youtube.jpg", class: 'pics-me') %>
+      </div>
+    </div>
+  </div>
+
+  <!-- <div class="intro-boutme">
     <h3>About me...</h3>
     <p>"Vivo en Colombia desde hace 10 años. Ahora tengo una doble cultura, útil para comprender esta aldea global que es el mundo de hoy. </p>
     <p>En Francia, Logré trabajar en grandes agencias de publicidad. Donde desarrollé lo que para mí es un arte: la comunicación. Por eso manejo esta disciplina sabiendo lo útil que es un mensaje claro y directo para una empresa. Gracias a mi experiencia también adquirí un buen nivel creativo que no solo me sirve para el diseño.</p>
     <p>Inventivo y creativo son heramientas que tengo para realizar un paradigma a través de la programación. Durante 2 años mi trabajo ha sido principalmente como desarrollador web fullstack. Desarrollé una mente lógica gracias a varios proyectos. De mi naturaleza  altruista surgió naturalmente la enseñanza de lenguajes de programación como ruby ​​y javascript. Yo en tres  palabras ? Creatividad y lógica!"</p>
-  </div>
+  </div> -->
 </section>
 
-<%= link_to "Hoja de vida", asset_path("/Nicolas-Barbier-cv.pdf"), target: "blank" %>
+<%# <%= link_to "Hoja de vida", asset_path("/Nicolas-Barbier-cv.pdf"), target: "blank" %> %>
+
+<script type="text/javascript">
+let slidShow = document.querySelector('.caroussel-container')
+setTimeout(function(){
+slidShow.classList.add("tourne"); 
+}, 1000);
+</script>
 
 
