@@ -14,6 +14,3 @@ class Contact < MailForm::Base
   end
   
 end
-
-
-# :to => "azerty-nikko@hotmail.fr",
