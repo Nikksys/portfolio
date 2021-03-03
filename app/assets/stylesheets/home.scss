@@ -122,6 +122,7 @@ position: relative;
   justify-content: space-around;
   padding: 0px 2%;
   box-sizing: border-box;
+  position: relative;
 }
 
 
@@ -132,6 +133,17 @@ position: relative;
   grid-gap: 20px;
   flex-wrap: wrap;
   
+}
+
+.skills-title{
+  writing-mode: vertical-rl;
+  text-orientation: upright;
+  color: gray;
+  font-family: futura;
+  font-size: 7rem;
+  position: absolute;
+  margin: 0 .1rem;
+  left: 0px;
 }
 
 .skills-pic{
@@ -171,7 +183,7 @@ position: relative;
   margin-top: 0;
 }
 
-.skills:nth-child(2) .skills-pic{
+.skills:nth-child(2) .skills-pic, .skills:nth-child(4) .skills-pic{
   order: 2;
 }
 
