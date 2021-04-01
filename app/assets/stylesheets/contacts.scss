@@ -71,3 +71,39 @@
   0% {transform: scale(0.95);}
 100% {transform: scale(1.05);}
 }
+
+
+.thank-you-title{
+  z-index: 99;
+  text-align:  center;
+  
+  color: gray;
+}
+
+#magic-email{
+  z-index: -1;
+  position: absolute;
+  top: 0;
+  animation: 5s moving linear;
+  animation-fill-mode: forwards;
+}
+
+
+@keyframes moving {
+  from {transform: translateX(0)}
+  to {transform: translateX(100vw)}
+}
+
+
+#nixsys-mail{
+  width: 300px;
+  animation: 5s movingme linear;
+  animation-fill-mode: forwards;
+}
+
+
+@keyframes movingme {
+  0%   {transform: translateX(110vw) rotate(-20deg);}
+  50%  {transform: translateX(90vw) rotate(-20deg);}
+  100% {transform: translateX(110vw) rotate(-20deg);}
+}

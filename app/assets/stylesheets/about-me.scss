@@ -1,3 +1,8 @@
+.about-cover{
+  
+    margin-bottom: 5rem;
+}
+
 .caroussel-boutme{
   width: 100%;
   height: 300px;
@@ -5,12 +10,27 @@
 .caroussel-boutme{
   overflow-x: hidden;
   width: 100%;
+  position: relative;
 }
 .caroussel-container{
   display: flex;
   width: 100%;
 }
 
+.bout-title-cont{
+  position: absolute;
+  z-index: 99;
+  left: calc(50% - 180px);
+  top: calc(50% - 54px);
+  
+  padding: 10px;
+  color: white;
+  font-size: 3rem;
+}
+
+.bout-title-cont h1{
+  margin: 0;
+}
 
 .caroussel-box{  
 width: 400px;
@@ -18,27 +38,11 @@ height: 300px;
 flex-shrink: 0;
 }
 
-.green{
-  background-color: green;
-}
-.yellow{
-  background-color: yellow;
-}
-.red{
-  background-color: red;
-}
-.purple{
-  background-color: purple;
-}
-.pink{
-  background-color: pink;
-}
 
 .tourne{
   width: 100px;
   animation: move 35s infinite linear ;
 }
-
 
 @keyframes move {
   100% {transform: translateX(-2000px);}
@@ -47,6 +51,215 @@ flex-shrink: 0;
 .pics-me{
   width: 100%;
   height: 100%;
+}
+/////////////////////////////////// resume part
+#resume-section{
+  position: relative;
+  font-size: .9em;
+}
+
+#resume-section::before{
+  content: url(resume.svg);
+  position: absolute;
+  width: 340px;
+  top: -41px;
+  left: calc(50% - 170px);
+}
+
+#resume-section{
+  background-color: #373841;
+  margin: 30px;
+  padding: 30px;
+}
+
+.info-profile-group{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  
+}
+
+.infos{
+  flex: 40;
+}
+
+.profile{
+  flex: 60;
+}
+.intro-resume{
+  padding: 10px;
+}
+.resume-container{
+  max-width: 750px;
+  margin: 0 auto;
+}
+
+#cv-profile{}
+.cvst0{
+   fill: white;
+ }
+
+.cv-card{
+  background-color: white;
+  padding-bottom: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.cv-title-box{
+  background-color: gray;
+  height: 50px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  background-color: #373841;
+}
+
+
+.title-cv-band{
+  width: auto;
+  height: 25px;
+}
+
+.icon-band{
+  width: auto;
+  height: 50px;
+}
+
+.work-place{
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 30px;
+  flex-wrap: wrap;
+  padding: 20px 10px;
+  
+  box-sizing: content-box;
+}
+
+.place-date {
+  line-height: 6px;
+  text-align: end;
+  flex: 0 0 150px;
+  
+
+}
+
+.work-content{
+  flex: 60;  
+}
+
+.no-mt{
+  margin-top: 0;
+  line-height: 6px;
+}
+
+
+
+.work-place li{
+   list-style-type: '💾  ';
+}
+
+.all-infos{
+  line-height: 5px;
+  
+}
+
+.intro-resume, .all-infos, .skills-place, .education-cont, .ref-cont {
+  padding: 0 10px;
+}
+
+.edu-info{
+  display: flex;
+gap: 10px;
+justify-content: center;
+width: 64%;
+margin: 0 auto
+  
+}
+
+.edu-date{
+  text-align: right;
+  line-height: 7px;
+  flex: 0 0 150px;
+}
+
+.edu-place{
+  line-height: 7px;
+  flex: 60;
+}
+
+.cv-bold{
+  font-weight: 400;
+}
+
+.cv-light{
+  font-weight: 200;
+}
+
+/////////////////////////////////// Music part
+#music-side{
+    
+}
+
+.music-side-cont{
+  display: flex;
+  margin: 0 auto;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 30px;
+}
+
+.music-lounge{
+  background: url("lounge.jpg");
+  background-position: center;
+  background-size: 100% 100%;
+  width: 100%;
+  padding: 30px;
+  padding-left: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+
+#titre-music{
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  color: white;
+  font-size: 2rem;
+  margin-top: 0;
+}
+
+.music-container{
+  max-width: 200px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: space-around;
+  gap: 30px;
+}
+
+.music-card{
+  background-color: #000000b3;
+  width: 450px;
+  color: white;
+  border-radius: 30px;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  padding: 30px;
+  
+  box-sizing: border-box;
+  
+  font-size: 1.2rem;
+}
+
+
+.music-container{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
 }
 
 
