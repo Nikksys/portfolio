@@ -168,6 +168,18 @@ flex-shrink: 0;
   padding: 0 10px;
 }
 
+.skills-place{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.skills-boxes{
+  margin: 0 auto;
+  height: 400px;
+  width: 220px;
+}
+
 .edu-info{
   display: flex;
 gap: 10px;

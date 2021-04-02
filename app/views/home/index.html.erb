@@ -97,8 +97,8 @@
 
 
 <script type="text/javascript">
-  let navLinks = document.querySelectorAll(".s-nav-link")
-  let linksText = document.querySelectorAll(".s-link-text")
+  var navLinks = document.querySelectorAll(".s-nav-link")
+  var linksText = document.querySelectorAll(".s-link-text")
   
   function timeLinks(index, time){
     setTimeout(function(){
@@ -120,27 +120,29 @@
     }, time)
   }
   
-  
+  var welcoming = true;
   function deployMenu(){ 
-    setTimeout(function(){
-      
-      timeLinks(1, 500)
-      timeLinksOut(1, 1000)
-      timeLinks(2, 1000)
-      timeLinksOut(2, 1500)
-      timeLinks(3, 1500)
-      timeLinksOut(3, 2000)
-      timeLinks(4, 2000)
-      timeLinksOut(4, 2500)
-    }, 1000);
+      setTimeout(function(){
+        timeLinks(1, 500)
+        timeLinksOut(1, 1000)
+        timeLinks(2, 1000)
+        timeLinksOut(2, 1500)
+        timeLinks(3, 1500)
+        timeLinksOut(3, 2000)
+        timeLinks(4, 2000)
+        timeLinksOut(4, 2500)
+      }, 1000);
   }
   
-  deployMenu()
+  if (welcoming) {
+    deployMenu()
+    welcoming = false;
+  }
   
   
   
   
-  let introVideo = document.querySelector("#intro-vid");
+  var introVideo = document.querySelector("#intro-vid");
   introVideo.pause();
 
   // to make appear element when it's in the viewport
