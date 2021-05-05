@@ -106,7 +106,6 @@
 #discipline{
   min-height: 100vh;
   width: 100%;
-  background-color: black;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -126,18 +125,13 @@
 }
 
 .skills-title{
-  writing-mode: vertical-rl;
-  text-orientation: upright;
   color: gray;
-  
   font-size: 4rem;
-  position: absolute;
-  margin: 0 .1rem;
-  left: 0px;
+  margin: 0 auto;
 }
 
 .skills-pic{
-  width: 600px;
+  width: 335px;
   height: 130px;
   transform: skewY(-2deg);
   background-repeat: no-repeat;
@@ -163,7 +157,7 @@
 }
 
 .skills-text{
-  color: white;
+  color: gray;
   width: 500px;
   height: 130px;
   transform: skewY(-2deg);
@@ -260,7 +254,7 @@
 
 ////// INDEX PORTFOLIO /////////
 .portfolio-cover{
-  background-image: image-url("portfolio-cover.jpg");
+  background-image: image-url("office.png");
   background-repeat: no-repeat;
   background-position: top;
   background-size: 100% 90%;

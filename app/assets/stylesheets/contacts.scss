@@ -72,7 +72,6 @@
 100% {transform: scale(1.05);}
 }
 
-
 .thank-you-title{
   z-index: 99;
   text-align:  center;
@@ -84,26 +83,43 @@
   z-index: -1;
   position: absolute;
   top: 0;
-  animation: 5s moving linear;
+  animation:2s moving linear;
   animation-fill-mode: forwards;
+  width: 336px;
+  margin-top: 400px;
 }
 
 
 @keyframes moving {
   from {transform: translateX(0)}
-  to {transform: translateX(100vw)}
+  to {transform: translateX(calc(50vw - 168px))}
 }
 
 
 #nixsys-mail{
   width: 300px;
-  animation: 5s movingme linear;
+  animation:2s movingme linear;
   animation-fill-mode: forwards;
 }
 
 
 @keyframes movingme {
-  0%   {transform: translateX(110vw) rotate(-20deg);}
-  50%  {transform: translateX(90vw) rotate(-20deg);}
-  100% {transform: translateX(110vw) rotate(-20deg);}
+  0%   {transform: translateX(100vw)}
+  100%  {transform: translateX(40vw)}
+}
+
+.mailed-page {
+    background-image: url("half-earth.png");
+    background-repeat: no-repeat;
+    background-position: 50% 157%;
+    overflow-x: hidden;
+    background-size: 115% 45%;
+}
+
+#back-home{
+  text-align: center;
+}
+
+#back-home a{
+  color: gray;
 }
