@@ -3,7 +3,6 @@
   
   <div class="cover-title">
     <h1>Fullstack Developer, Designer</h1>
-    
   </div>
   
   <div class="cover-p">
@@ -120,7 +119,7 @@
     }, time)
   }
   
-  var welcoming = true;
+  
   function deployMenu(){ 
       setTimeout(function(){
         timeLinks(1, 500)
@@ -134,10 +133,15 @@
       }, 1000);
   }
   
-  if (welcoming) {
+  if (sessionStorage.getItem("welcomed") === "no") {
     deployMenu()
-    welcoming = false;
+    sessionStorage.setItem("welcomed", "yes")
   }
+  
+  
+  
+  
+
   
   
   
