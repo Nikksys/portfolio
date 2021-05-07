@@ -9,7 +9,6 @@ class HomeController < ApplicationController
     else
       flash.now[:error] = 'Cannot send message'
       render :index
-
     end
   end
   

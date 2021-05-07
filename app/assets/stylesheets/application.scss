@@ -24,11 +24,22 @@
 @import "design";
 @import "about-me";
 
+$fa-font-path: '~@fortawesome/fontawesome-free/webfonts';
+// @import '~@fortawesome/fontawesome-free/scss/fontawesome';
+// @import '~@fortawesome/fontawesome-free/scss/solid';
+// @import '~@fortawesome/fontawesome-free/scss/regular';
+// @import '~@fortawesome/fontawesome-free/scss/brands';
+// @import '~@fortawesome/fontawesome-free/scss/v4-shims';
+// 
+@import '@fortawesome/fontawesome-free/css/fontawesome.css';
+@import '@fortawesome/fontawesome-free/css/all.css';
+
+
+
 
 
 :root {
   font-size: 16px;
-  font-family: 'futura', sans-serif;
   --text-primary: #b6b6b6; 
   --text-secondary: white ;
   /* --bg-primary: #7702b7 ; */
@@ -54,7 +65,7 @@ a{
   font-family: sans;
   color: var(--text-primary);
   font-size: 6em;
-  font-family: futura;
+  
   text-align: center;
 }
 
@@ -71,3 +82,7 @@ a{
 .pw-1rem {
   padding: 0 1rem;
 }
+
+* {
+  font-family: 'Kanit', sans-serif
+};

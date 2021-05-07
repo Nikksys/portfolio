@@ -1,6 +1,10 @@
 <div class="mailed-page">
   <div class="thank-you">
-    <h1>Thank you <br> <%=@contact.name%> <br> for your message !!!</h1>
-    <p>We keep in touch !</p>
+    <h1 class="thank-you-title">{ Thank you <%=@contact.name%> for your message ! }</h1>
+    <p id="back-home">
+      <a  href="/">Back to home page</a>
+    </p>
+    <%=image_tag("flying-email.gif", id: "magic-email")%>
+    <%=image_tag("nixsys-mail.png", id: "nixsys-mail")%>
   </div>
 </div>

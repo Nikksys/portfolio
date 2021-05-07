@@ -1,52 +1,461 @@
 <section class="about-cover">
-  <h1>ABOUT ME</h1>
+  
   <div class="caroussel-boutme">
+    <div class="bout-title-cont">
+      <h1>{ ABOUT ME }</h1>
+    </div>
     <div class="caroussel-container">
-      <div class="green caroussel-box">
+      <div class=" caroussel-box">
         <%= image_tag("teach.jpg", class: 'pics-me') %>
       </div>
-      <div class="yellow caroussel-box">
-        <%= image_tag("prog.png", class: 'pics-me') %>
+      <div class=" caroussel-box">
+        <%= image_tag("prog.jpeg", class: 'pics-me') %>
       </div>
-      <div class="red caroussel-box">
-        <%= image_tag("bike.png", class: 'pics-me') %>
+      <div class=" caroussel-box">
+        <%= image_tag("nikko-moto.png", class: 'pics-me') %>
       </div>
-      <div  class="purple caroussel-box">
+      <div  class=" caroussel-box">
         <%= image_tag("youtube.jpg", class: 'pics-me') %>
       </div>
-      <div class="pink caroussel-box">
+      <div class="caroussel-box">
         <%= image_tag("tuto.jpg", class: 'pics-me') %>
       </div>
-      <div class="green caroussel-box">
+      <div class=" caroussel-box">
         <%= image_tag("teach.jpg", class: 'pics-me') %>
       </div>
-      <div  class="yellow caroussel-box">
-        <%= image_tag("prog.png", class: 'pics-me') %>
+      <div  class=" caroussel-box">
+        <%= image_tag("prog.jpeg", class: 'pics-me') %>
       </div>
-      <div class="red caroussel-box">
-        <%= image_tag("bike.png", class: 'pics-me') %>
+      <div class=" caroussel-box">
+        <%= image_tag("nikko-moto.png", class: 'pics-me') %>
       </div>
-      <div class="purple caroussel-box">
+      <div class=" caroussel-box">
         <%= image_tag("youtube.jpg", class: 'pics-me') %>
       </div>
     </div>
   </div>
 
-  <!-- <div class="intro-boutme">
-    <h3>About me...</h3>
-    <p>"Vivo en Colombia desde hace 10 años. Ahora tengo una doble cultura, útil para comprender esta aldea global que es el mundo de hoy. </p>
-    <p>En Francia, Logré trabajar en grandes agencias de publicidad. Donde desarrollé lo que para mí es un arte: la comunicación. Por eso manejo esta disciplina sabiendo lo útil que es un mensaje claro y directo para una empresa. Gracias a mi experiencia también adquirí un buen nivel creativo que no solo me sirve para el diseño.</p>
-    <p>Inventivo y creativo son heramientas que tengo para realizar un paradigma a través de la programación. Durante 2 años mi trabajo ha sido principalmente como desarrollador web fullstack. Desarrollé una mente lógica gracias a varios proyectos. De mi naturaleza  altruista surgió naturalmente la enseñanza de lenguajes de programación como ruby ​​y javascript. Yo en tres  palabras ? Creatividad y lógica!"</p>
-  </div> -->
 </section>
 
-<%= link_to "Hoja de vida", asset_path("/Nicolas-Barbier-cv.pdf"), target: "blank" %>
+<section id="resume-section">
+  <div class="resume-container">
+    <div class="info-profile-group">
+      <div class="infos hideme cv-card">
+        <div class=" cv-title-box">
+          <%= render 'svg/infos-title.svg' %>
+          <%= render 'svg/icon-info.svg' %>
+        </div>
+        <div class="all-infos ">
+          <div style="display: flex; align-items: center; justify-content: start; gap: 4px;">
+            <p style="font-size: 1.5rem; line-height: inherit;">🇫🇷</p>
+            <p>French and Colombian</p>
+          </div>
+          <div style="display: flex; align-items: center; justify-content: start; gap: 4px;">
+            <p style="font-size: 1.5rem; line-height: inherit;">📅</p>
+            <p>22-12-80</p>
+          </div>
+          <div style="display: flex; align-items: center; justify-content: start; gap: 4px;">
+            <p style="font-size: 1.5rem; line-height: inherit;">🏠</p>
+            <p>Bogotá - Colombia</p>
+          </div>
+          <div style="display: flex; align-items: center; justify-content: start; gap: 4px;">
+            <p style="font-size: 1.5rem; line-height: inherit;">📩</p>
+            <p><a href="mailto:azerty-nikko@hotmail.fr">azerty-nikko@hotmail.fr</a></p>
+          </div>
+          <div style="display: flex; align-items: center; justify-content: start; gap: 4px;">
+            <p style="font-size: 1.5rem; line-height: inherit;">☎️</p>
+            <p>+57 321 7289779</p>
+          </div>
+          <div style="display: flex; align-items: center; justify-content: start; gap: 4px;">
+            <i style="font-size: 1.5rem; line-height: inherit;" class="fab fa-linkedin"></i>
+            <p>/in/nicolas-barbier-69673116b</p>
+          </div>
+        </div>
+      </div>
+      <div class="profile hideme cv-card">
+        <div class="cv-title-box">
+          <%= render 'svg/profile-title.svg' %>
+          <%= render 'svg/icon-profile.svg' %>
+        </div>
+        <div class="cv-light intro-resume" style="font-style: italic">
+          <p>I'm French and Colombian.</p>
+          <p>My double culture is useful to understand this global village that is the world of today.</p>
+          <p>In France, I managed to work in large advertising agencies.</p>
+          <p>Now, Inventive and creative are tools that I have, to realize a paradigm through programming. For almost 3 years my job has been mainly as a fullstack web developer and still a little bit of design. I developed a logical mind thanks to various rails projects. Me in three words? Creativity and logic! "</p>
+        </div>
+      </div>
+    </div>
+    <div class=" skills-sec  hideme cv-card">
+      <div class="cv-title-box">
+        <%= render 'svg/skills-title.svg' %>
+        <%= render 'svg/icon-skills.svg' %>
+      </div>
+      <div class="skills-place">
+        <div class="skills-boxes">
+          <canvas id="webChart" width="220" height="350"></canvas>
+        </div>
+        <div class="skills-boxes">
+          <canvas id="langChart" width="220" height="350"></canvas>
+        </div>
+        <div class="skills-boxes">
+          <canvas id="designChart" width="220" height="350"></canvas>
+        </div>
+      </div>
+    </div>
+    <div class="employment hideme cv-card">
+      <div class=" cv-title-box">
+        <%= render 'svg/employ-title.svg' %>
+        <%= render 'svg/icon-employ.svg' %>  
+      </div>
+      
+      <div class="work-place">
+        <div class="place-date">
+          <p class="cv-bold no-mt">Jul. 2020 - Currently</p>
+          <p class="cv-light"> Bogotá - Colombia</p>
+        </div>
+        <div class="work-content">
+          <p class="cv-bold no-mt">Programmer @ freelance</p>
+          <ul class="cv-light"> 
+            <li>Dec 2020 - Apr 2021.
+              <p>4 monthes mission with ScoutingLab. A Colombian website for soccer players and teams analysis and statistics. Relevant tasks: Front and responsive, Fully ajax CRUD for analysis dashboard connected with match video.</p>
+            </li>
+          </ul>
+        </div>
+      </div>
+      
+      
+        <div class="work-place">
+          <div class="place-date">
+            <p class="cv-bold no-mt">Aug. 2018 - Jun. 2020</p>
+            <p class="cv-light">Bogotá - Colombia</p>
+          </div>
+          <div class="work-content">
+            <p class="cv-bold no-mt">Programmer @ BogotaDev</p>
+            <ul class="cv-light">
+              <li>Redesign an Atlanta Insurance company for a better UX, Creation of the
+       	    front end, and builiding of the back end in rails. With chat and translation 
+      	    among other features.</li>
+              <li> Creation of the tree first MVC (Artist, Venues, Event) of a musical event 
+      	    site.</li>
+              <li>Creation of the authentication and secure log in for the mobile app of the 
+      	   event site with react native.</li>
+              <li>Creation of illustrations for the HIW section and Front end of a nondisclo
+      	   sure contract web site</li>
+            </ul>
+          </div>
+        </div>
+      
+      <div class="work-place">
+        <div class="place-date">
+          <p class="cv-bold no-mt">Feb 2019 - Jun. 2020</p>
+          <p class="cv-light">Bogotá - Colombia</p>
+        </div>
+        <div class="work-content">
+          <p class="cv-bold no-mt">Ruby Teacher @ BogotaBootcamp</p>
+          <ul class="cv-light">
+            <li>Teach fundamentals of Ruby ( variable, execution control, data structure,
+  	    class and method)</li>
+            <li> Basics of Ruby on Rails (Rails Console, Routes, MVC,  Gems, Bootstrap) </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="education hideme cv-card">
+      <div class="cv-title-box">
+        <%= render 'svg/edu-title.svg' %>
+        <%= render 'svg/icon-edu.svg' %>
+      </div>
+      <div class="education-cont">
+        <div class="edu-info">
+          <div class="edu-date">
+            <p class="cv-bold">2020</p>
+            <p class="cv-light">Bogotá Colombia</p>
+          </div>
+          <div class="edu-place">
+            <p class="cv-bold">Javascript / React bootcamp (5 weeks long)</p>
+            <p class="cv-light">BogotaBootcamp.</p>
+          </div>
+        </div>
+        <div class="edu-info">
+          <div class="edu-date">
+            <p class="cv-bold">2018</p>
+            <p class="cv-light">Bogotá Colombia</p>
+          </div>
+          <div class="edu-place">
+            <p class="cv-bold">Ruby / Rails bootcamp (10 weeks long)</p>
+            <p class="cv-light">BogotaBootcamp.</p>
+          </div>
+        </div>
+        <div class="edu-info">
+          <div class="edu-date">
+            <p class="cv-bold">Sep 2005- Jul. 2006</p>
+            <p class="cv-light">Paris France</p>
+          </div>
+          <div class="edu-place">
+            <p class="cv-bold">Bachelor Communication manager </p>
+            <p class="cv-light">Sup de Pub.</p>
+          </div>
+        </div>
+        <div class="edu-info">
+          <div class="edu-date">
+            <p class="cv-bold">Sep 2004 - Jul. 2005</p>
+            <p class="cv-light">Paris France</p>
+          </div>
+          <div class="edu-place">
+            <p class="cv-bold">Art Direction - Spec </p>
+            <p class="cv-light">Sup de Pub.</p>
+          </div>
+        </div>
+        <div class="edu-info">
+          <div class="edu-date">
+            <p class="cv-bold">Sep 2002 - Jul. 2004</p>
+            <p class="cv-light">Paris France</p>
+          </div>
+          <div class="edu-place">
+            <p class="cv-bold">DUT - Information & Comunication - ad spec</p>
+            <p class="cv-light">University Paris V.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="ref hideme cv-card">
+      <div class="cv-title-box">
+        <%= render 'svg/ref-title.svg' %>
+        <%= render 'svg/icon-ref.svg' %>
+      </div>
+      <div class="ref-cont">
+        <p>Granger Abuhoff</p>
+        <p>BogotaDev - Bogota Bootcamp </p>
+        <p>Dev Leader and founder</p>
+        <p>tel: +1 609-668-4381 @: g@bogotadev.com</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="music-side hideme">
+  
+  <div class="music-side-cont">
+    
+    <div class="music-lounge">
+      <h3 id="titre-music">MUSICAL TASTES</h3>
+      <div class="music-card">
+        <p>Hey! Take a sit, just relax a moment, I invite you to listen to my favorite moment music!</p>
+        <p>After all, it's true that people get along even more when they share same musical tastes!</p>
+        <p>On your right you can listen tree diferent musics that I like, from 3 diferent musical genres that I used to listen.</p>
+        <p>Enjoy!</p>
+      </div>
+      
+      <div class="music-container">
+        
+        <iframe width="200" height="200" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/731567587&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe>
+
+        <iframe width="200" height="200" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/599399388&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe>
+        
+        <iframe width="200" height="200" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/311614952&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+
 
 <script type="text/javascript">
-let slidShow = document.querySelector('.caroussel-container')
-setTimeout(function(){
-slidShow.classList.add("tourne"); 
-}, 1000);
-</script>
+  
+// for chartJs canva creation.
+  const chartBuild = (el, arrLabels, name, arrDatas, arrColor, arrBorder) => {
+    
 
+    let data = {
+        labels: arrLabels,
+        datasets: [{
+            label: "",
+            data: arrDatas,
+            backgroundColor: arrColor,
+            borderColor: arrBorder,
+            borderWidth: 1
+        }]
+    }
+
+    let options = {
+      
+      title: {
+        text: name,
+        display: true
+      },
+        scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero: true,
+                    maxTicksLimit: 11,
+                    suggestedMax: 100
+                }
+            }]
+        },
+        responsive: false,
+        animation: {
+            duration: 9000 // general animation time
+        },
+        legend: {
+            display: false
+        }
+    }
+
+    let config = {
+        type: 'bar',
+        data: data,
+        options: options
+    };
+    
+    
+    
+      let oTop = $(el).offset().top - window.innerHeight;
+      let chartHidden = true;
+      $(window).scroll(function(){
+          let pTop = $('body').scrollTop();
+          if ((pTop > oTop) && (chartHidden)) {
+              chartHidden = false;
+              start_count(el, config);    
+          }
+      });
+    
+    
+    
+    function start_count(el, configuration){
+      
+      let ctx = document.querySelector(el).getContext('2d');
+      let chart = new Chart(ctx, configuration)
+    }
+  } // end chartBuild
+  
+  chartBuild('#webChart', ['HTML/CSS', 'Ruby', 'Rails', 'Javascript', 'Bootstrap', 'React'], 'Web Dev', [90, 90, 80, 70, 80, 30], ['rgba(255, 99, 132, 0.2)', 'rgba(54, 162, 235, 0.2)', 'rgba(255, 206, 86, 0.2)', 'rgba(75, 192, 192, 0.2)', 'rgba(153, 102, 255, 0.2)', 'rgba(255, 159, 64, 0.2)'], ['rgba(255, 99, 132, 1)', 'rgba(54, 162, 235, 1)', 'rgba(255, 206, 86, 1)', 'rgba(75, 192, 192, 1)', 'rgba(153, 102, 255, 1)', 'rgba(255, 159, 64, 1)'])
+  chartBuild('#langChart', ['French', 'Spanish', 'English'], 'Language', [100, 90, 75], ['rgba(255, 99, 132, 0.2)', 'rgba(54, 162, 235, 0.2)', 'rgba(255, 206, 86, 0.2)'], ['rgba(255, 99, 132, 1)', 'rgba(54, 162, 235, 1)', 'rgba(255, 206, 86, 1)'])
+  chartBuild('#designChart', ['Photoshop', 'Illustrator', 'InDesign'], 'Design', [80, 90, 70], ['rgba(255, 99, 132, 0.2)', 'rgba(54, 162, 235, 0.2)', 'rgba(255, 206, 86, 0.2)'], ['rgba(255, 99, 132, 1)', 'rgba(54, 162, 235, 1)', 'rgba(255, 206, 86, 1)'])
+  
+  /////////////\\\\\\\\\\\\\\\\
+  
+
+
+
+/////////////\\\\\\\\\\\\\\\\
+  
+  
+  //  start slide at 1 second
+  slidShow = document.querySelector('.caroussel-container')
+  setTimeout(function(){
+  slidShow.classList.add("tourne"); 
+  }, 1000);
+
+  // to make appear element when it's in the viewport
+  $(document).ready(function() {
+
+    $(window).on('load', function(){
+
+      $('.hideme').each( function(i){
+
+          let bottom_of_object = $(this).offset().top + $(this).outerHeight();
+          let bottom_of_window = $(window).scrollTop() + $(window).height();
+
+          /* If the object is completely visible in the window, fade it it */
+          if( bottom_of_window  >= bottom_of_object ){
+
+              $(this).animate({'opacity':'1'},500);
+              
+              if ($(this).prop("tagName") == "VIDEO") {
+                if(this.played.length === 0 )
+                $(this)[0].play();
+              }
+          }
+
+      });
+
+      $('.final-anime').each( function(i){
+
+          let bottom_of_object = $(this).offset().top + $(this).outerHeight();
+          let bottom_of_window = $(window).scrollTop() + $(window).height();
+
+          /* If the object is completely visible in the window, fade it it */
+          if( bottom_of_window  >= bottom_of_object ){
+
+              $(this).animate({'opacity':'1'},800);
+          }
+
+      });
+
+      $('.final-background').each( function(i){
+
+          let bottom_of_object = $(this).offset().top + $(this).outerHeight();
+          let bottom_of_window = $(window).scrollTop() + $(window).height();
+
+          /* If the object is completely visible in the window, fade it it */
+          if( bottom_of_window  >= bottom_of_object ){
+
+            $(this).animate({'opacity':'1'},1000);
+          }
+
+      });
+    // your logic here`enter code here`
+    });
+
+    /* Every time the window is scrolled ... */
+    $(window).scroll( function(){
+
+        /* Check the location of each desired element */
+        $('.hideme').each( function(i){
+
+            let bottom_of_object = $(this).offset().top + $(this).outerHeight();
+            let bottom_of_window = $(window).scrollTop() + $(window).height();
+
+            /* If the object is completely visible in the window, fade it it */
+            if( bottom_of_window  >= bottom_of_object ){
+
+                $(this).animate({'opacity':'1'},500);
+                
+                if ($(this).prop("tagName") == "VIDEO") {
+                  if(this.played.length === 0 )
+                  $(this)[0].play();
+                  
+                }
+            }
+
+        });
+
+        $('.final-anime').each( function(i){
+
+            let bottom_of_object = $(this).offset().top + $(this).outerHeight();
+            let bottom_of_window = $(window).scrollTop() + $(window).height();
+
+            /* If the object is completely visible in the window, fade it it */
+            if( bottom_of_window  >= bottom_of_object ){
+
+                $(this).animate({'opacity':'1'},800);
+            }
+
+        });
+
+        $('.final-background').each( function(i){
+
+            let bottom_of_object = $(this).offset().top + $(this).outerHeight();
+            let bottom_of_window = $(window).scrollTop() + $(window).height();
+
+            /* If the object is completely visible in the window, fade it it */
+            if( (bottom_of_window + bottom_of_window*0.1) >= bottom_of_object ){
+
+              $(this).animate({'opacity':'1'},800);
+            }
+
+        });
+
+      });
+
+  });
+
+</script>
+ 
 
