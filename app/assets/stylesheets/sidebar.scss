@@ -5,108 +5,166 @@
   fill:var(--icon-dark);
 }
 
-.s-navbar{
-  top: 0;
-  width: 5rem;
-  height: 100vh;
-  background-color: var(--bg-antra);
-  position: fixed;
-  transition: var(--transition-speed);
-  overflow-y: hidden;
-  z-index: 99;
-}
+@media screen and (min-width: 768px){
+  .s-navbar{
+    top: 0;
+    width: 5rem;
+    height: 100vh;
+    background-color: var(--bg-antra);
+    position: fixed;
+    transition: var(--transition-speed);
+    overflow-y: hidden;
+    z-index: 99;
+  }
 
-.s-navbar:hover {
-  width: 13rem;
-}
-.s-navbar-nav{
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  height: 50%;
-}
+  .s-navbar:hover {
+    width: 13rem;
+  }
+  .s-navbar-nav{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 50%;
+  }
 
-.logo{
-  width: 100%;
-  background-color: var(--bg-secondary);
-  margin-bottom: 0.5rem;
-  padding: 6px 0px;
-}
+  .logo{
+    width: 100%;
+    background-color: var(--bg-secondary);
+    margin-bottom: 0.5rem;
+    padding: 6px 0px;
+  }
 
-.logo svg{
-  width: 3.2rem;
-  min-width: 2.7rem;
-  margin-left: 17px;
-  transform: rotate(0deg);
-  transition: var(--transition-speed);
-}
+  .logo svg{
+    width: 3.2rem;
+    min-width: 2.7rem;
+    margin-left: 17px;
+    transform: rotate(0deg);
+    transition: var(--transition-speed);
+  }
 
-.logo a{
-  filter: none;
-}
+  .logo a{
+    filter: none;
+  }
 
-#logotypo-nixsys{
-  display: inline;
-  position: absolute;
-  left: -999px;
-  transition: var(--transition-speed);
-}
+  #logotypo-nixsys{
+    display: inline;
+    position: absolute;
+    left: -999px;
+    transition: var(--transition-speed);
+  }
 
-.s-navbar:hover #logotypo-nixsys{
-  left: 20px;
-}
+  .s-navbar:hover #logotypo-nixsys{
+    left: 20px;
+  }
 
-.s-navbar:hover .logo svg{
-  margin-left: 160px;
-  transform: rotate(720deg);
-  position: relative;
-  top: -20px;
-  width: 2.7rem;
-}
+  .s-navbar:hover .logo svg{
+    margin-left: 160px;
+    transform: rotate(720deg);
+    position: relative;
+    top: -20px;
+    width: 2.7rem;
+  }
 
-.s-nav-link{
-  display: flex;
-  align-items: center;
-  height: 5rem;
-  color: var(--text-primary);
-  filter: grayscale(100%) opacity(0.7);
-  transition: var(--transition-speed);
-}
+  .s-nav-link{
+    display: flex;
+    align-items: center;
+    height: 5rem;
+    color: var(--text-primary);
+    filter: grayscale(100%) opacity(0.7);
+    transition: var(--transition-speed);
+  }
 
-.s-nav-link:hover {
-    filter: grayscale(0%) opacity(1);
-    background: var(--bg-secondary);
-    color: var(--text-secondary);
-}
+  .s-nav-link:hover {
+      filter: grayscale(0%) opacity(1);
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+  }
 
-.s-link-text{
+  .s-link-text{
+      display: none;
+      margin-left: 1rem;
+      transition: opacity 5s;
+  }
+
+  .s-navbar:hover .s-link-text{
+    display: inline;
+    min-width: 75px;
+  }
+
+
+  .s-nav-item{
+    width: 100%;
+    margin: 0 0;
+    box-sizing: border-box;
+  }
+
+
+  .s-nav-item svg{
+    width: 2.5rem;
+    margin: 0 1.4rem;
+    min-width: 2.5rem;
+  }
+
+  main{
+    margin-left: 5rem;
+  }
+
+}
+@media screen and (max-width: 767px) {
+  
+  .s-navbar{
+    width: 100vw;
+    background-color: var(--bg-antra);
+    transition: var(--transition-speed);
+    overflow-y: hidden;
+    z-index: 99;
+  }
+  .s-navbar-nav{
+    list-style-type: none;
+    margin: 0;
+    padding: 0px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .s-navbar-nav li{
+    border-right: solid 1px gray;
+    width: 20%;
+    height: 4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  li.s-nav-item:nth-child(5){
+    border-right: none;
+  }
+
+  .s-nav-link{
+    width: 40px;
+    
+  }
+  #logotypo-nixsys{
     display: none;
-    margin-left: 1rem;
-    transition: opacity 5s;
-}
+    position: absolute;
+    transition: var(--transition-speed);
+  }
 
-.s-navbar:hover .s-link-text{
-  display: inline;
-  min-width: 75px;
-}
+  .s-nav-link{
+    display: flex;
+    color: var(--text-primary);
+    
+  }
 
+  .s-link-text{
+      display: none;
+      margin-left: 1rem;
+      transition: opacity 5s;
+  }
 
-.s-nav-item{
-  width: 100%;
-  margin: 0 0;
-  box-sizing: border-box;
-}
-
-
-.s-nav-item svg{
-  width: 2.5rem;
-  margin: 0 1.4rem;
-  min-width: 2.5rem;
-}
-
-main{
-  margin-left: 5rem;
+  .s-navbar:hover .s-link-text{
+    display: none;
+  }
 }

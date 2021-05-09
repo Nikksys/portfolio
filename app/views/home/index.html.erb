@@ -133,10 +133,13 @@
       }, 1000);
   }
   
-  if (sessionStorage.getItem("welcomed") === "no") {
-    deployMenu()
-    sessionStorage.setItem("welcomed", "yes")
+  if(window.innerWidth > 767){
+    if (sessionStorage.getItem("welcomed") === "no") {
+      deployMenu()
+      sessionStorage.setItem("welcomed", "yes")
+    }
   }
+  
   
   
   
