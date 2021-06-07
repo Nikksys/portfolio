@@ -59,7 +59,7 @@ flex-shrink: 0;
 }
 
 #resume-section::before{
-  content: image-url(resume.svg);
+  content: url('resume.svg');
   position: absolute;
   width: 340px;
   top: -41px;
