@@ -58,12 +58,19 @@ flex-shrink: 0;
   font-size: .9em;
 }
 
-#resume-section::before{
-  content: url('resume.svg');
-  position: absolute;
-  width: 340px;
-  top: -41px;
-  left: calc(50% - 170px);
+#resume-section::before {
+    content: '';
+    background: url(/assets/resume-428c31d04eda34d53b75a914bf6ff90eb2272bddebbcf5820cd9807303006928.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    display: block;
+    position: absolute;
+    right: 0px;
+    top: -37px;
+    left: calc(50% - 170px);
+    height: 47px;
+    width: 279px;
 }
 
 #resume-section{
