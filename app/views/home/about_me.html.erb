@@ -269,9 +269,8 @@
 <script type="text/javascript">
   
 // for chartJs canva creation.
-  const chartBuild = (el, arrLabels, name, arrDatas, arrColor, arrBorder) => {
+  function chartBuild (el, arrLabels, name, arrDatas, arrColor, arrBorder) {
     
-
     let data = {
         labels: arrLabels,
         datasets: [{
@@ -315,23 +314,22 @@
     
     
     
-      let oTop = $(el).offset().top - window.innerHeight;
-      let chartHidden = true;
-      $(window).scroll(function(){
-          let pTop = $('body').scrollTop();
-          if ((pTop > oTop) && (chartHidden)) {
-              chartHidden = false;
-              start_count(el, config);    
-          }
-      });
-    
-    
     
     function start_count(el, configuration){
-      
       let ctx = document.querySelector(el).getContext('2d');
       let chart = new Chart(ctx, configuration)
     }
+    
+    showChart = 0
+    window.addEventListener("scroll", () => {
+      if (showChart < 3 ){
+        if(window.scrollY > 500 && window.scrollY < 600){
+          start_count(el, config); 
+          showChart += 1
+        }
+      }
+    })
+    
   } // end chartBuild
   
   chartBuild('#webChart', ['HTML/CSS', 'Ruby', 'Rails', 'Javascript', 'Bootstrap', 'React'], 'Web Dev', [90, 90, 80, 70, 80, 30], ['rgba(255, 99, 132, 0.2)', 'rgba(54, 162, 235, 0.2)', 'rgba(255, 206, 86, 0.2)', 'rgba(75, 192, 192, 0.2)', 'rgba(153, 102, 255, 0.2)', 'rgba(255, 159, 64, 0.2)'], ['rgba(255, 99, 132, 1)', 'rgba(54, 162, 235, 1)', 'rgba(255, 206, 86, 1)', 'rgba(75, 192, 192, 1)', 'rgba(153, 102, 255, 1)', 'rgba(255, 159, 64, 1)'])
@@ -419,7 +417,9 @@
                 
                 if ($(this).prop("tagName") == "VIDEO") {
                   if(this.played.length === 0 )
-                  $(this)[0].play();
+                  $(this)[0].play();    
+                }
+                if (true) {
                   
                 }
             }
