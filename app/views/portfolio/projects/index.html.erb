@@ -1,29 +1,20 @@
-<div class="pw-1rem desing-index">
-  
-
-<%= link_to 'New Project', new_portfolio_project_path %>
-
-
-<%@projects.each do |project|%>
-  <%= link_to([:portfolio, project]) do %>
-  <div class="thumbnail-card">
-    <div class="thumbnail-box">
-      <%=image_tag(project.picture, class: 'thumbnail-pic') if project.picture.attached?%>
-    </div>
-    <p class="thumbnail-title">test <%=project.name%></p>
-    <div class="project-links">
-      <%= link_to 'Edit', edit_portfolio_project_path(project) %>
-      <%= link_to 'Destroy', portfolio_project_path(project), method: :delete, data: { confirm: 'Are you sure?' } %>
-    </div>
-    <div class="thumbnail-details">
-      <p>Design type: <%=project.project_type%></p>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.</p>
-    </div>
+<div class="desing-index">
+  <%= link_to 'New Project', new_portfolio_project_path %>
+  <h1 class="index-title">{ Web Projects }</h1>
+  <div class="projects-grid">
+    <%@projects.each do |project|%>
+      <%= link_to([:portfolio, project]) do %>
+        <div class="thumbnail-card">
+          <div class="thumbnail-box">
+            <%=image_tag(project.picture, class: 'thumbnail-pic') if project.picture.attached?%>
+          </div>
+          <p class="thumbnail-title"><%=project.name%></p>
+          <div class="thumbnail-details">
+            <p><%=project.project_type%></p>
+            <p><%=project.description%>.</p>
+          </div>
+        </div>
+      <%end%>
+    <%end%>
   </div>
-  <%end%>
-<%end%>
-<br>
-
-  
 </div>
-
