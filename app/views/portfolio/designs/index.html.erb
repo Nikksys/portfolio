@@ -8,10 +8,13 @@
           <div class="thumbnail-box">
             <%=image_tag(design.picture, class: 'thumbnail-pic') if design.picture.attached?%>
           </div>
-          <p class="thumbnail-title">test <%=design.name%></p>
+          <div class="card-f-line">
+            <p class="thumbnail-title"><%=design.name%></p>
+            <p class="thumbnail-title"><%=design.ref_date.strftime("%d-%m-%Y")%></p>
+          </div>
           <div class="thumbnail-details">
             <p><%=design.design_type%></p>
-            <p> <%= project.description %></p>
+            <p> <%= design.description %></p>
           </div>
         </div>
       <%end%>

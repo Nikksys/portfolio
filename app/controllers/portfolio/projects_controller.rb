@@ -1,7 +1,7 @@
 class Portfolio::ProjectsController < ApplicationController
   
   def index
-    @projects = Project.all
+    @projects = Project.all.order(ref_date: :desc)
   end
   
   def show
@@ -43,6 +43,6 @@ class Portfolio::ProjectsController < ApplicationController
   
   private
     def project_params
-      params.require(:project).permit(:name, :description, :project_type, :url, :picture, :content, :remove_p_picture)
+      params.require(:project).permit(:name, :description, :project_type, :url, :picture, :content, :remove_p_picture, :ref_date)
     end
 end

@@ -1,7 +1,7 @@
 class Portfolio::DesignsController < ApplicationController
   
   def index
-    @designs = Design.all
+    @designs = Design.all.order(ref_date: :desc)
   end
   
   def show
@@ -44,7 +44,7 @@ class Portfolio::DesignsController < ApplicationController
   private
     
     def design_params
-      params.require(:design).permit(:name, :description, :design_type, :picture, :content, :remove_picture)
+      params.require(:design).permit(:name, :description, :design_type, :picture, :content, :remove_picture, :ref_date)
     end
   
 end

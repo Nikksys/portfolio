@@ -13,7 +13,8 @@ class HomeController < ApplicationController
   end
   
   def portfolio
-    @projects = Project.all
+    @all_projects = (Project.all + Design.all).sort_by {|i| i.ref_date}.reverse
+    
   end
   
   def about_me

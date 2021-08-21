@@ -1,17 +1,36 @@
-
 <section class="portfolio-cover">
-    
-      <h1 class="portfolio-title1">{ PORTFOLIO }</h1>
-      <div class="p-cover-center">
-        <%= link_to portfolio_web_dev_path do%> <h1>WEB DEV</h1> <% end %>
-        <%=image_tag("nix-papertoy.png", class: "papertoy")%>
-        <%= link_to portfolio_designs_path do%> <h1>DESIGN</h1> <% end %>
-      </div>
-    
+  <h1 class="portfolio-title1">{ PORTFOLIO }</h1>
+  <div class="p-cover-center">
+      <%= link_to portfolio_web_dev_path do%> <h1>WEB DEV</h1> <% end %>
+      <%=image_tag("nix-papertoy.png", class: "papertoy")%>
+      <%= link_to portfolio_designs_path do%> <h1>DESIGN</h1> <% end %>
+  </div>  
 </section>
 
+<section class="pf-mix">
+  <div class="desing-index">
+    <div class="projects-grid">
+      <%@all_projects.each do |project|%>
+        <%= link_to([:portfolio, project]) do %>
+          <div class="thumbnail-card">
+            <div class="thumbnail-box">
+              <%=image_tag(project.picture, class: 'thumbnail-pic') if project.picture.attached?%>
+            </div>
+            <div class="card-f-line">
+              <p class="thumbnail-title"><%=project.name%></p>
+              <p> <%= project.ref_date.strftime("%d-%m-%Y") %> </p>
+            </div>
+            <div class="thumbnail-details">
+              <p> <%= project.class == Design ? project.design_type : project.project_type %> </p>
+              <p><%=project.description%>.</p>
+            </div>
+          </div>
+        <%end%>
+      <%end%>
+    </div>
+  </div>
+</section>
 
-<%= link_to "Web Dev", portfolio_web_dev_path%>
-<%= link_to "Designs",  portfolio_designs_path %>
-
-
+<script type="text/javascript">
+  document.querySelector(".pf-mix .desing-index").style.background = "radial-gradient(circle, rgba(249,249,249,1) 21%, rgba(190,190,190,1) 100%)"
+</script>

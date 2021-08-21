@@ -8,13 +8,16 @@
           <div class="thumbnail-box">
             <%=image_tag(project.picture, class: 'thumbnail-pic') if project.picture.attached?%>
           </div>
-          <p class="thumbnail-title"><%=project.name%></p>
+          <div class="card-f-line">
+            <p class="thumbnail-title"><%=project.name%></p>
+            <p> <%= project.ref_date.strftime("%d-%m-%Y") %> </p>
+          </div>
           <div class="thumbnail-details">
             <p><%=project.project_type%></p>
             <p><%=project.description%>.</p>
           </div>
         </div>
       <%end%>
-    <%end%>
+    <%end%>  
   </div>
 </div>
