@@ -1,7 +1,9 @@
-<div class="project-links">
-  <%= link_to 'edit', edit_portfolio_project_path(@project)%>
-  <%= link_to 'Destroy', portfolio_project_path(@project), method: :delete, data: { confirm: 'Are you sure?' } %>
-</div>
+<% if user_signed_in? && current_user.role == 'admin' %>
+  <div class="project-links">
+    <%= link_to 'edit', edit_portfolio_project_path(@project)%>
+    <%= link_to 'Destroy', portfolio_project_path(@project), method: :delete, data: { confirm: 'Are you sure?' } %>
+  </div>
+<% end %>
 <div class="project-image">
   <%=image_tag(@project.picture, style: " margin-bottom: 30px") if @project.picture.attached?%>
   <svg class="wave" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 107">

@@ -1,3 +1,4 @@
+<%= console %>
 <section class="portfolio-cover">
   <h1 class="portfolio-title1">{ PORTFOLIO }</h1>
   <div class="p-cover-center">
@@ -9,10 +10,12 @@
 
 <section class="pf-mix">
   <div class="desing-index">
+    <h3>{ Mix of lasts Web and Design projects }</h3>
     <div class="projects-grid">
       <%@all_projects.each do |project|%>
         <%= link_to([:portfolio, project]) do %>
-          <div class="thumbnail-card">
+          <div data-typ = <%= project.class %> class="mix-card thumbnail-card">
+            <p class="mix-card-type"> <%= project.class %></p>
             <div class="thumbnail-box">
               <%=image_tag(project.picture, class: 'thumbnail-pic') if project.picture.attached?%>
             </div>
@@ -33,4 +36,11 @@
 
 <script type="text/javascript">
   document.querySelector(".pf-mix .desing-index").style.background = "radial-gradient(circle, rgba(249,249,249,1) 21%, rgba(190,190,190,1) 100%)"
+  document.querySelectorAll(".mix-card-type").forEach((card, i) => {
+    if (card.innerText == "Project") {
+      card.innerText = card.innerText.replace("Project",  "Web Dev");
+      card.parentElement.style.borderTop = "solid 35px #1a407b";
+    }
+  });
+  
 </script>

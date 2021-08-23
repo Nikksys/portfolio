@@ -142,6 +142,13 @@
         <span class="s-link-text">Contact</span>
       </a>
     </li>
-    
+    <div class="sessions">
+      <% if user_signed_in? %>
+        <%= link_to "Logout", destroy_user_session_path, :method => :delete, :style => "color: inherit" %>
+      <% else %>
+        <a href="/users/sign_in" style="color: inherit;">Login</a>
+      <% end %>
+    </div>
   </ul>
+  
 </nav>

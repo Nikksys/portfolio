@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   # get 'contact-me', to: "home#contact"
   resources :contacts, only: [:new, :create]
   resources :eurekods
+  resources :users
   namespace :portfolio do
     resources :projects, except: :index
     get 'web-dev', to: 'projects#index' #SEO aim => to have explicit slug.

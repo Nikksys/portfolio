@@ -275,7 +275,19 @@
 }
 
 
+.mix-card{
+  border-top: solid 35px #7b1a1a;
+  position: relative;
 
+}
+
+.mix-card-type{
+  color: white !important;
+  font-weight: bold;
+  position: absolute;
+  top: -45px;
+  left: 17px;
+}
 
 .p-cover-center{
   display: flex;

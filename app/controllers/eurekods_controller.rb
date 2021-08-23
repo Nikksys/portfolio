@@ -1,5 +1,5 @@
 class EurekodsController < ApplicationController
-  
+  before_action :set_auth, except: %i[ index show ]
   def index
     @eurekods = Eurekod.all
   end
@@ -45,6 +45,10 @@ class EurekodsController < ApplicationController
   private
     def eurekod_params
       params.require(:eurekod).permit(:name, :description, :url)
+    end
+    
+    def set_auth
+      redirect_to( "/") unless user_signed_in? && current_user.role == 'admin'
     end
   
   

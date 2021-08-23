@@ -1,5 +1,7 @@
 <div class="desing-index">
-  <%= link_to 'New Design', new_portfolio_design_path %>
+  <% if user_signed_in? && current_user.role == 'admin'%>
+    <%= link_to 'New Design', new_portfolio_design_path %>
+  <% end %>
   <h1 class="index-title">{ Design Projects }</h1>
   <div class="projects-grid">
     <%@designs.each do |design|%>

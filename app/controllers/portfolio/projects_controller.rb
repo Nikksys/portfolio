@@ -1,7 +1,8 @@
 class Portfolio::ProjectsController < ApplicationController
+  before_action :set_auth, except: %i[ index show ]
   
   def index
-    @projects = Project.all.order(ref_date: :desc)
+    @projects = (user_signed_in? && current_user.role == 'admin') ? Project.all.order(ref_date: :desc) : Project.published.all.order(ref_date: :desc)    
   end
   
   def show
@@ -43,6 +44,11 @@ class Portfolio::ProjectsController < ApplicationController
   
   private
     def project_params
-      params.require(:project).permit(:name, :description, :project_type, :url, :picture, :content, :remove_p_picture, :ref_date)
+      params.require(:project).permit(:name, :description, :project_type, :url, :picture, :content, :remove_p_picture, :ref_date, :online)
     end
+    
+    def set_auth
+      redirect_to( "/") unless user_signed_in? && current_user.role == 'admin'
+    end
+    
 end

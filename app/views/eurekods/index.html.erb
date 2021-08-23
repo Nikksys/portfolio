@@ -3,9 +3,12 @@
   </section>
 
 <h1>Eurekod</h1>
-<%=link_to 'new video', new_eurekod_path%>
+<% if user_signed_in? && current_user.role == 'admin' %>
+  <%=link_to 'new video', new_eurekod_path%>
+<% end %>
 
 <%@eurekods.each do |video|%>
   <p><%= video.name%></p>
   <p><%= video.description%></p>
 <% end %>
+
