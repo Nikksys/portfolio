@@ -2,13 +2,17 @@
         
   </section>
 
-<h1>Eurekod</h1>
+
 <% if user_signed_in? && current_user.role == 'admin' %>
   <%=link_to 'new video', new_eurekod_path%>
 <% end %>
 
-<%@eurekods.each do |video|%>
-  <p><%= video.name%></p>
-  <p><%= video.description%></p>
-<% end %>
+<p style="text-align: center;">Soon you will see some cool video tutos about ruby, rails, javascript, and more...</p>
+<p style="text-align: center;">Meanwhile feel free to check my Web Dev and Design section</p>
 
+<%= image_tag("construction.png", style: "margin: 0 auto; display: block;")%>
+
+<div class="link-to-project">
+  <%= link_to "Web Dev", portfolio_web_dev_path%>
+  <%= link_to "Design", portfolio_designs_path%>
+</div>

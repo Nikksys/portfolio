@@ -254,7 +254,7 @@
 
 ////// INDEX PORTFOLIO /////////
 .portfolio-cover{
-  background: image-url("office.png"), radial-gradient(circle, rgba(249,249,249,1) 21%, rgba(190,190,190,1) 100%);;
+  background: image-url("office.png"), #dfdfdf;
   background-repeat: no-repeat;
   background-position: top;
   background-size: 100% 90%, 100% 100%;
@@ -308,10 +308,17 @@
   transition: 2.2s;
 }
 
-.p-cover-center h1:hover{
-  color: #c21414;
+// .p-cover-center h1:hover{
+//   color: #c21414;
+// }
+
+.p-cover-center > a:nth-child(1) > h1:nth-child(1):hover{
+  color: #1a407b;
 }
 
+.p-cover-center > a:nth-child(3) > h1:nth-child(1):hover{
+  color: #7b1a1a;
+}
 
 @keyframes flip {
 	0% {

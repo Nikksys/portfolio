@@ -1,4 +1,3 @@
-<%= console %>
 <section class="portfolio-cover">
   <h1 class="portfolio-title1">{ PORTFOLIO }</h1>
   <div class="p-cover-center">
@@ -10,7 +9,8 @@
 
 <section class="pf-mix">
   <div class="desing-index">
-    <h3>{ Mix of lasts Web and Design projects }</h3>
+    <h3>{ Lasts projects }</h3>
+    <p>You can explore here the 4 lasts mix projects of design and dev. <br> If you want to see just one section, feel free to click above.</p>
     <div class="projects-grid">
       <%@all_projects.each do |project|%>
         <%= link_to([:portfolio, project]) do %>
@@ -19,6 +19,16 @@
             <div class="thumbnail-box">
               <%=image_tag(project.picture, class: 'thumbnail-pic') if project.picture.attached?%>
             </div>
+            <% if user_signed_in? && current_user.role == 'admin'%>
+              <div class="online-cont">
+                <p>online: </p>
+                <svg  class="dot-line" style="width: 10px; margin-top: 3px;" viewBox="0 0 10 10">
+                  <g>
+                  	<circle data-online="<%= project.online %>" class="online-point" cx="5" cy="5" r="5"/>
+                  </g>
+                </svg>
+              </div>
+            <% end %>
             <div class="card-f-line">
               <p class="thumbnail-title"><%=project.name%></p>
               <p> <%= project.ref_date.strftime("%d-%m-%Y") %> </p>
@@ -35,11 +45,19 @@
 </section>
 
 <script type="text/javascript">
-  document.querySelector(".pf-mix .desing-index").style.background = "radial-gradient(circle, rgba(249,249,249,1) 21%, rgba(190,190,190,1) 100%)"
   document.querySelectorAll(".mix-card-type").forEach((card, i) => {
     if (card.innerText == "Project") {
       card.innerText = card.innerText.replace("Project",  "Web Dev");
       card.parentElement.style.borderTop = "solid 35px #1a407b";
+    }
+  });
+  document.querySelectorAll(".online-point").forEach((item, i) => {
+    if (item.dataset.online === "true") {
+      console.log(item.dataset.online)
+      item.style.fill = "#00ff01"
+    } else {
+      console.log(item.dataset.online)
+      item.style.fill = "#fe0000"
     }
   });
   

@@ -23,8 +23,13 @@
   <%= @project.content %>
 </div>
 
+<div class="link-to-project">
+  <%= link_to "Web Dev", portfolio_web_dev_path%>
+  <%= link_to "Design", portfolio_designs_path%>
+</div>
+
 <script type="text/javascript">
-  // hide caption in show page
+  
   if (document.body.contains(document.querySelector(".attachment__caption"))) {
     let trixCaption = document.querySelector(".attachment__caption")
     trixCaption.style.display = "none"
