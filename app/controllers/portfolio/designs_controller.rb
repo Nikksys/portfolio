@@ -1,7 +1,7 @@
 class Portfolio::DesignsController < ApplicationController
-  
+  before_action :set_auth, except: %i[ index show ]
   def index
-    @designs = Design.all
+    @designs = (user_signed_in? && current_user.role == 'admin') ? Design.all.order(ref_date: :desc) : Design.published.all.order(ref_date: :desc)
   end
   
   def show
@@ -44,7 +44,11 @@ class Portfolio::DesignsController < ApplicationController
   private
     
     def design_params
-      params.require(:design).permit(:name, :description, :design_type, :picture, :content, :remove_picture)
+      params.require(:design).permit(:name, :description, :design_type, :picture, :content, :remove_picture, :ref_date, :online)
+    end
+    
+    def set_auth
+      redirect_to( "/") unless user_signed_in? && current_user.role == 'admin'
     end
   
 end

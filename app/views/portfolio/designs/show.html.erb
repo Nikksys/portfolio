@@ -1,14 +1,35 @@
-<div class="project-image"><%=image_tag(@design.picture) if @design.picture.attached?%></div>
-<div class="project-header">
-  <h1 class="big-title"><%=@design.name%></h1>
-  <%= link_to 'edit', edit_portfolio_design_path(@design), class: 'to-title-base'%>
+<% if user_signed_in? && current_user.role == 'admin' %>
+  <div class="project-links">
+    <%= link_to 'edit', edit_portfolio_design_path(@design)%>
+    <%= link_to 'Destroy', portfolio_design_path(@design), method: :delete, data: { confirm: 'Are you sure?' } %>
+  </div>
+<% end %>
+<div class="project-image">
+  <%=image_tag(@design.picture, style: " margin-bottom: 30px") if @design.picture.attached?%>
+  <svg class="wave" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 107">
+    <style type="text/css">
+    	.ligne{fill:#f7f7f7;}
+      .wave{display: block;}
+    </style>
+    <path class="ligne" d="M1440,107.73V0.07c-63.07,95.7-521.04-2.99-782.31,0S0,94.27,0,94.27v13.46H1440z"/>
+  </svg>
 </div>
-<p class="description"><%=@design.description%></p>
-<%=@design.content%>
+<div class="project-header">
+  <h1 class="big-title">{ <%=@design.name%> }</h1>
+  <p class="description"><%=@design.description%></p>
+</div>
+
+<div class="content-container">
+  <%= @design.content %>
+</div>
+
+<div class="link-to-project">
+  <%= link_to "Web Dev", portfolio_web_dev_path%>
+  <%= link_to "Design", portfolio_designs_path%>
+</div>
 
 <script type="text/javascript">
   // hide caption in show page
-  
   if (document.body.contains(document.querySelector(".attachment__caption"))) {
     let trixCaption = document.querySelector(".attachment__caption")
     trixCaption.style.display = "none"

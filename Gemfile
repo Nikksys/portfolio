@@ -29,9 +29,6 @@ gem 'mail_form', '~> 1.8', '>= 1.8.1'
 gem 'image_processing', '~> 1.2'
 #Flexible authentication solution for Rails with Warden
 gem 'devise'
-#email delivery powered by SendGrid
-gem 'sendgrid-ruby'
-
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
 

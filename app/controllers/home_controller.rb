@@ -13,7 +13,7 @@ class HomeController < ApplicationController
   end
   
   def portfolio
-    @projects = Project.all
+    @all_projects = (user_signed_in? && current_user.role == 'admin') ? (Project.all + Design.all).sort_by {|i| i.ref_date} : (Project.published.all + Design.published.all).sort_by {|i| i.ref_date}
   end
   
   def about_me

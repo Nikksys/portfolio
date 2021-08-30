@@ -2,7 +2,13 @@
   fill:var(--icon-clear);
 }
 .st1{
-  fill:var(--icon-dark);
+  fill:var(--blue-nixsys);
+}
+
+.sessions{
+  color: white;
+  position: absolute;
+  bottom: 0;
 }
 
 @media screen and (min-width: 768px){
@@ -108,9 +114,7 @@
     min-width: 2.5rem;
   }
 
-  main{
-    margin-left: 5rem;
-  }
+  
 
 }
 @media screen and (max-width: 767px) {

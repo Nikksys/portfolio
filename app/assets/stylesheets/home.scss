@@ -254,10 +254,10 @@
 
 ////// INDEX PORTFOLIO /////////
 .portfolio-cover{
-  background-image: image-url("office.png");
+  background: image-url("office.png"), #dfdfdf;
   background-repeat: no-repeat;
   background-position: top;
-  background-size: 100% 90%;
+  background-size: 100% 90%, 100% 100%;
   height: 100vh;
   display: flex;
   flex-direction: column;
@@ -275,7 +275,19 @@
 }
 
 
+.mix-card{
+  border-top: solid 35px #7b1a1a;
+  position: relative;
 
+}
+
+.mix-card-type{
+  color: white !important;
+  font-weight: bold;
+  position: absolute;
+  top: -45px;
+  left: 17px;
+}
 
 .p-cover-center{
   display: flex;
@@ -296,10 +308,17 @@
   transition: 2.2s;
 }
 
-.p-cover-center h1:hover{
-  color: #c21414;
+// .p-cover-center h1:hover{
+//   color: #c21414;
+// }
+
+.p-cover-center > a:nth-child(1) > h1:nth-child(1):hover{
+  color: #1a407b;
 }
 
+.p-cover-center > a:nth-child(3) > h1:nth-child(1):hover{
+  color: #7b1a1a;
+}
 
 @keyframes flip {
 	0% {
