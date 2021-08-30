@@ -146,7 +146,7 @@
       <% if user_signed_in? %>
         <%= link_to "Logout", destroy_user_session_path, :method => :delete, :style => "color: inherit" %>
       <% else %>
-        <a href="/users/sign_in" style="color: inherit;">Login</a>
+        <a href="/users/sign_in" style="color: var(--bg-antra);">Login</a>
       <% end %>
     </div>
   </ul>
