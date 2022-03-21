@@ -23,8 +23,8 @@ gem 'jbuilder', '~> 2.7'
 # gem 'bcrypt', '~> 3.1.7'
 # gem dotenv to secure keys
 gem 'dotenv-rails'
-# gem _form used to contact form
-gem '_form', '~> 1.8', '>= 1.8.1'
+# gem mail_form used to contact form
+gem 'mail_form', '~> 1.8', '>= 1.8.1'
 # Use Active Storage variant
 gem 'image_processing', '~> 1.2'
 #Flexible authentication solution for Rails with Warden
